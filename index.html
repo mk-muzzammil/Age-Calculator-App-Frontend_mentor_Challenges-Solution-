@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age-Calculator |App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="./assets/images/favicon-32x32.png" type=".png">
+  <script src="./index.js" defer></script>
+  
+</head>
+<body>
+
+  <div class="cardContainer">
+
+    <div class="inputsSection">
+
+      <div class="inputDiv dayInput">
+        <label for="day" class="label"
+        id="dayLabel" >DAY</label>
+        <input class="Input" type="number" name="Day" id="day" min="0" max="99" placeholder="DD">
+        <span class="errorMessage" id="daySpan"></span>
+        
+      </div>
+      <div class="inputDiv monthInput">
+        <label for="day" class="label" id="monthLabel" >Month</label>
+        <input class="Input" type="number" name="month" id="month" min="0" max="99" placeholder="MM">
+        <span class="errorMessage" id="monthSpan"></span>
+        
+      </div>
+      <div class="inputDiv yearInput">
+        <label for="day" class="label" id="yearLabel" >Year</label>
+        
+        <input class="Input" type="number" name="year" id="year" min="0" max="9999" placeholder="YYYY">
+        <span class="errorMessage" id="yearSpan"></span>
+      
+
+      </div>
+      
+      
+      
+    </div>
+    <span class="errorMessage" id="inputSectionSpan"></span>
+
+    
+    <div class="iconSection">
+      <div class="divider"></div>
+      
+      <img id="arrowIcon" src="./assets/images/icon-arrow.svg" alt="Arrow Icon">
+
+    </div>
+
+    <div class="OutputSection">
+      <div class="outputDiv" id="yearDivision">
+        <p id="yearsOutput">--</p>
+        <h1 class="primaryHeading">Years</h1>
+
+      </div>
+      <div class="outputDiv" id="monthDivision">
+        <p id="monthOutput">--</p>
+        <h1 class="primaryHeading">months</h1>
+      </div>
+      <div class="outputDiv" id="dayDivision">
+        <p id="daysOutput">--</p>
+        <h1 class="primaryHeading">days</h1>
+      </div>
+
+
+
+    </div>
+
+      
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+  
+
+</body>
+</html>

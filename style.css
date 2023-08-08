@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap');
+
+*{
+  padding: 0;margin: 0;box-sizing: border-box;
+}
+:root{
+--Purple: hsl(259, 100%, 65%);
+--Light-red: hsl(0, 100%, 67%);
+--White: hsl(0, 0%, 100%);
+--Off-white: hsl(0, 0%, 94%);
+--Light-grey: hsl(0, 0%, 86%);
+--Smokey-grey: hsl(0, 1%, 44%);
+--Off-black: hsl(0, 0%, 8%);
+
+--f-size:32px;
+--f-italic-low-weight:400;
+--f-italic-high-weight:800;
+--f-weight-simple:700;
+}
+html{
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background-color: var(--Off-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+.cardContainer{
+  padding: 1rem 1.5rem;
+  height: 450px;
+  width: 550px;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: var(--White);
+  box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 8rem;
+
+}
+
+.inputsSection{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  max-width: 400px;
+}
+
+.inputDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom:1rem;
+  width: 120px;
+
+  
+}
+.inputDiv input{
+  font-size: var(--f-size);
+  font-weight: 700;
+  color:var(--Off-black);
+  padding: 0.5rem;
+  border-radius: 10px;
+  border:1px solid var(--Light-grey);
+  outline: none;
+
+}
+
+.inputDiv input:hover,.inputDiv input:focus-visible{
+  cursor: pointer;
+  outline:1px solid var(--Purple);
+  border:1px solid var(--Purple);
+}
+.errorMessage{
+  display: none;
+}
+.show-Error{
+  display: flex;
+  color:red;
+  font-size: 10px;
+  font-style: italic;
+
+}
+.inputDiv label{
+  font-weight: var(--f-weight-simple);
+  color:var(--Smokey-grey);
+  text-transform: uppercase;
+}
+.divider{
+  margin-block: 1rem;
+  border:1px solid var(--Light-grey);
+}
+.iconSection{
+  position: relative;
+}
+.iconSection img{
+  position: absolute;
+  width: 4.5rem;
+  right: -1px;
+  top: -25px;
+  background-color: var(--Purple);
+  padding: 1.1rem;
+  border-radius: 2.2rem;
+
+}
+.iconSection img:hover,.iconSection img:active{
+  background-color: var(--Off-black);
+  cursor: pointer;
+}
+
+.OutputSection{
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem;
+  border-bottom-right-radius: 5rem;
+}
+.outputDiv{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  font-size: 3.5rem;
+
+}
+#dayDivision{
+  border-bottom-right-radius: 5rem;
+
+}
+.outputDiv h1{
+  font-size: 3.5rem;
+  font-weight: var(--f-italic-high-weight);
+  font-style: italic;
+
+}
+.outputDiv p{
+  color: var(--Purple);
+  font-weight:700;
+  font-style: italic;
+}
+
+@media screen and (max-width:465px) {
+  .cardContainer{
+    padding: 1rem 1rem;
+  }
+  .inputsSection{
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .inputDiv{
+    max-width: 100%;
+  }
+  .inputDiv input{
+    font-size: 25px;
+    padding: 0.3rem;
+    height:3rem;
+    width: 5rem;
+
+  }
+  .iconSection img{
+    position:absolute;
+    left: 8rem;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
