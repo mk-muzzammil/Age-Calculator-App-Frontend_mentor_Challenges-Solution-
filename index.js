@@ -40,6 +40,11 @@ const removeSpans = () => {
   monthSpan.classList.remove("show-Error");
   daySpan.classList.remove("show-Error");
 };
+const removeInputFocuses=()=>{
+  dayEle.classList.remove("show-Error-Input");
+  yearEle.classList.remove("show-Error-Input");
+  monthEle.classList.remove("show-Error-Input");
+}
 
 // ======================For randering data on scren ====================
 const renderAgeOnScreen = (year, month, day) => {
@@ -111,6 +116,7 @@ const GetInputValues = () => {
   if (dayVal && monthVal && yearVal) {
     clearErrors();
     removeSpans();
+    removeInputFocuses();
 
     if (
       validateYear(yearVal) &&
@@ -143,16 +149,20 @@ const GetInputValues = () => {
       // =====================call imp to remove previous errors bcz everytime condition checked and new error will be displayed so no use of previous spans and errors
     clearErrors();
     removeSpans();
+    removeInputFocuses();
+
       if(!validateYear(yearVal) || !validateMonth(monthVal) || !validateDay(dayVal,monthVal,yearVal)){
         if(!validateYear(yearVal)){
           yearlabelEle.style.color="red";
           yearSpan.classList.add("show-Error");
+          yearEle.classList.add("show-Error-Input");
           displayErrorMessageSpan(yearSpan,"Must be in the past");
         }
 
         if(!validateMonth(monthVal)){
           monthlabelEle.style.color = "red";
           monthSpan.classList.add("show-Error");
+          monthEle.classList.add("show-Error-Input");
           displayErrorMessageSpan(monthSpan, "Must be a Valid Month.");
 
         }
@@ -160,16 +170,19 @@ const GetInputValues = () => {
         if(!validateDay(dayVal,monthVal,yearVal)){
           daylabelEle.style.color = "red";
           daySpan.classList.add("show-Error");
+          dayEle.classList.add("show-Error-Input");
           displayErrorMessageSpan(daySpan, "Must Be a Valid Day. ");
 
         }
-        if(!validateDay(dayVal,monthVal,yearVal) && validateMonth(monthVal) && validateYear(yearVal)){
-          daylabelEle.style.color = "red";
-          daySpan.classList.add("show-Error");
-          displayErrorMessageSpan(daySpan, "Must Be a Valid Date. ");
-
-
+        if (!validateDay(dayVal, monthVal, yearVal) && validateMonth(monthVal) && validateYear(yearVal)) {
+          if (dayVal < 1 || dayVal > daysInMonth[monthVal - 1]) {
+            daylabelEle.style.color = "red";
+            daySpan.classList.add("show-Error");
+            dayEle.classList.add("show-Error-Input");
+            displayErrorMessageSpan(daySpan, "Must Be a Valid Date.");
+          }
         }
+        
         
       
       }
@@ -181,22 +194,26 @@ const GetInputValues = () => {
    else {
     clearErrors();
     removeSpans();
+    removeInputFocuses();
 
     if (!yearVal || !monthVal || !dayVal) {
      
       if (!yearVal) {
         yearlabelEle.style.color = "red";
         yearSpan.classList.add("show-Error");
+        yearEle.classList.add("show-Error-Input");
         displayErrorMessageSpan(yearSpan, "This Feild is required.");
       }
       if (!monthVal) {
         monthlabelEle.style.color = "red";
         monthSpan.classList.add("show-Error");
+        monthEle.classList.add("show-Error-Input");
         displayErrorMessageSpan(monthSpan, "This Feild is required.");
       }
       if (!dayVal) {
         daylabelEle.style.color = "red";
         daySpan.classList.add("show-Error");
+        dayEle.classList.add("show-Error-Input");
         displayErrorMessageSpan(daySpan, "This Feild is required.");
       }
     }

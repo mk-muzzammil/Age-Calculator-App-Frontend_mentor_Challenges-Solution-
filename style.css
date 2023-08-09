@@ -84,6 +84,10 @@ body{
   font-style: italic;
 
 }
+.show-Error-Input:focus-visible,.show-Error-Input:hover,.show-Error-Input{
+  outline:1.5px solid var(--Light-red) !important;
+  border:1.5px solid var(--Light-red) !important;
+}
 .inputDiv label{
   font-weight: var(--f-weight-simple);
   color:var(--Smokey-grey);
